@@ -1,8 +1,11 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { type Yacht } from "@shared/schema";
+import { useLocation } from "wouter";
 
-export default function YachtCard({ yacht }: { yacht: Yacht }) {
+export default function YachtCard({ yacht, isGuest }: { yacht: Yacht; isGuest?: boolean }) {
+  const [, setLocation] = useLocation();
+
   return (
     <Card className="overflow-hidden">
       <div className="aspect-video relative">
@@ -34,7 +37,15 @@ export default function YachtCard({ yacht }: { yacht: Yacht }) {
           <span className="text-sm text-muted-foreground">
             Capacity: {yacht.capacity} people
           </span>
-          <Button>Book Now</Button>
+          {isGuest ? (
+            <Button variant="outline" onClick={() => setLocation("/auth")}>
+              Sign in to Book
+            </Button>
+          ) : (
+            <Button onClick={() => setLocation(`/yachts/${yacht.id}/book`)}>
+              Book Now
+            </Button>
+          )}
         </div>
       </CardContent>
     </Card>
