@@ -6,19 +6,25 @@ import { useLocation } from "wouter";
 export default function YachtCard({ yacht, isGuest }: { yacht: Yacht; isGuest?: boolean }) {
   const [, setLocation] = useLocation();
 
+  const imageUrl = yacht.images[0] || 'yachts/placeholder.jpg';
+
   return (
     <Card className="overflow-hidden">
-      <div className="aspect-video relative">
+      <div className="aspect-[16/9] relative bg-muted">
         <img 
-          src={yacht.images[0]} 
+          src={imageUrl} 
           alt={yacht.name}
           className="absolute inset-0 w-full h-full object-cover"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.src = 'yachts/placeholder.jpg';
+          }}
         />
       </div>
       <CardHeader>
         <CardTitle className="flex justify-between items-start">
           <span>{yacht.name}</span>
-          <span className="text-primary">${yacht.pricePerDay}/day</span>
+          <span className="text-primary">${yacht.pricePerDay.toLocaleString()}/day</span>
         </CardTitle>
       </CardHeader>
       <CardContent>
