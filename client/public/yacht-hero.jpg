@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1920" height="1080" fill="#003366"/>
+  <path d="M0 540 L1920 540" stroke="white" stroke-opacity="0.1" stroke-width="2"/>
+  <path d="M960 0 L960 1080" stroke="white" stroke-opacity="0.1" stroke-width="2"/>
+  <text x="960" y="540" font-family="Arial" font-size="24" fill="white" text-anchor="middle">Yacht Hero Image Placeholder</text>
+</svg>
