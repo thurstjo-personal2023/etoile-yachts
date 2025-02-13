@@ -72,7 +72,7 @@ export default function HomePage() {
                   <Loader2 className="h-8 w-8 animate-spin text-primary" />
                 </div>
               ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {yachts?.slice(0, 3).map((yacht) => (
                     <YachtCard key={yacht.id} yacht={yacht} isGuest />
                   ))}
@@ -154,7 +154,7 @@ export default function HomePage() {
                   <Loader2 className="h-8 w-8 animate-spin text-primary" />
                 </div>
               ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {yachts?.map((yacht) => (
                     <YachtCard key={yacht.id} yacht={yacht} />
                   ))}
