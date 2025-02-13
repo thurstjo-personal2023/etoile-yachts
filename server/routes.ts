@@ -9,7 +9,7 @@ export function registerRoutes(app: Express): Server {
   setupAuth(app);
   
   // Serve static files from client/public directory at root path
-  app.use(express.static(path.join(process.cwd(), 'client/public')));
+  app.use('/public', express.static(path.join(process.cwd(), 'client/public')));
 
   app.get("/api/yachts", async (_req, res) => {
     const yachts = await storage.getYachts();

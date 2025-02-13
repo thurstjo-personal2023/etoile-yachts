@@ -24,7 +24,7 @@ export default function HomePage() {
           <div 
             className="absolute inset-0 bg-cover bg-center"
             style={{ 
-              backgroundImage: 'url(/yacht-hero.jpg)',
+              backgroundImage: 'url(/public/yacht-hero.jpg)',
               backgroundPosition: 'center 65%'
             }}
           >
