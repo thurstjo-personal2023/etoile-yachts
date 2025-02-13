@@ -7,7 +7,7 @@ VALUES
     12,
     15000,
     ARRAY['Infinity Pool', 'Beach Club', 'Cinema Room', 'Helipad', 'Water Sports Equipment'],
-    ARRAY['/public/yachts/ocean-symphony-1.jpg'],
+    ARRAY['/yachts/ocean-symphony-1.jpg'],
     1,
     true
   ),
@@ -17,7 +17,7 @@ VALUES
     8,
     8500,
     ARRAY['Jacuzzi', 'BBQ Station', 'Jet Skis', 'Wine Cellar', 'Stabilizers'],
-    ARRAY['/public/yachts/azure-dream-1.jpg'],
+    ARRAY['/yachts/azure-dream-1.jpg'],
     1,
     true
   ),
@@ -27,7 +27,7 @@ VALUES
     10,
     12000,
     ARRAY['Master Suite', 'Beach Platform', 'Gym', 'Professional Crew', 'Gourmet Kitchen'],
-    ARRAY['/public/yachts/royal-odyssey-1.jpg'],
+    ARRAY['/yachts/royal-odyssey-1.jpg'],
     1,
     true
   );
