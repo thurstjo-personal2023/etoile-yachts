@@ -2,9 +2,14 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { setupAuth } from "./auth";
 import { storage } from "./storage";
+import path from "path";
+import express from "express";
 
 export function registerRoutes(app: Express): Server {
   setupAuth(app);
+  
+  // Serve static files from client/public directory
+  app.use('/public', express.static(path.join(process.cwd(), 'client/public')));
 
   app.get("/api/yachts", async (_req, res) => {
     const yachts = await storage.getYachts();
