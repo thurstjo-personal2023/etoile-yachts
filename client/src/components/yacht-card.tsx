@@ -3,30 +3,33 @@ import { Button } from "@/components/ui/button";
 import { type Yacht } from "@shared/schema";
 import { useLocation } from "wouter";
 import { useState } from "react";
+import { Loader2 } from "lucide-react";
 
 export default function YachtCard({ yacht, isGuest }: { yacht: Yacht; isGuest?: boolean }) {
   const [, setLocation] = useLocation();
   const [imageError, setImageError] = useState(false);
   const [imageLoading, setImageLoading] = useState(true);
 
-  // Ensure we're using the absolute path from the database
-  const imageUrl = !imageError ? yacht.images[0] : '/yachts/placeholder.jpg';
+  // Create the full URL path for the image
+  const imageUrl = !imageError 
+    ? `${window.location.origin}${yacht.images[0]}` 
+    : `${window.location.origin}/yachts/placeholder.jpg`;
 
   return (
     <Card className="overflow-hidden group hover:shadow-lg transition-shadow">
       <div className="aspect-video relative bg-muted">
         {imageLoading && (
           <div className="absolute inset-0 flex items-center justify-center bg-muted">
-            <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin" />
+            <Loader2 className="h-8 w-8 animate-spin text-primary" />
           </div>
         )}
         <img 
           src={imageUrl} 
-          alt={yacht.name}
+          alt={`${yacht.name} yacht`}
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${
             imageLoading ? 'opacity-0' : 'opacity-100'
           }`}
-          onError={() => {
+          onError={(e) => {
             console.error(`Failed to load image: ${imageUrl}`);
             setImageError(true);
             setImageLoading(false);
