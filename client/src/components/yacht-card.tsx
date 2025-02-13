@@ -11,7 +11,7 @@ export default function YachtCard({ yacht, isGuest }: { yacht: Yacht; isGuest?: 
   const [imageLoading, setImageLoading] = useState(true);
 
   // Use the path directly without window.location.origin
-  const imageUrl = !imageError ? yacht.images[0] : '/public/yachts/placeholder.jpg';
+  const imageUrl = !imageError ? yacht.images[0] : '/yachts/placeholder.jpg';
 
   return (
     <Card className="overflow-hidden group hover:shadow-lg transition-shadow">
