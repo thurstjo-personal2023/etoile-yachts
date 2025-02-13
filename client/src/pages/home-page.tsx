@@ -24,7 +24,7 @@ export default function HomePage() {
           <div 
             className="absolute inset-0 bg-cover bg-center"
             style={{ 
-              backgroundImage: 'url(/public/yacht-hero.jpg)',
+              backgroundImage: 'url(/yacht-hero.jpg)',
               backgroundPosition: 'center 65%'
             }}
           >
@@ -92,7 +92,7 @@ export default function HomePage() {
                 <Card className="overflow-hidden">
                   <div className="aspect-[4/3] relative">
                     <img 
-                      src="/public/diving.jpg" 
+                      src="/diving.jpg" 
                       alt="Scuba diving experience"
                       className="absolute inset-0 w-full h-full object-cover"
                     />
@@ -117,7 +117,7 @@ export default function HomePage() {
                 <Card className="overflow-hidden">
                   <div className="aspect-[4/3] relative">
                     <img 
-                      src="/public/pool.jpg" 
+                      src="/pool.jpg" 
                       alt="Luxury pool"
                       className="absolute inset-0 w-full h-full object-cover"
                     />
