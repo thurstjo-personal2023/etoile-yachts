@@ -9,6 +9,7 @@ export default function YachtCard({ yacht, isGuest }: { yacht: Yacht; isGuest?: 
   const [imageError, setImageError] = useState(false);
   const [imageLoading, setImageLoading] = useState(true);
 
+  // Ensure we're using the absolute path from the database
   const imageUrl = !imageError ? yacht.images[0] : '/yachts/placeholder.jpg';
 
   return (
@@ -26,10 +27,14 @@ export default function YachtCard({ yacht, isGuest }: { yacht: Yacht; isGuest?: 
             imageLoading ? 'opacity-0' : 'opacity-100'
           }`}
           onError={() => {
+            console.error(`Failed to load image: ${imageUrl}`);
             setImageError(true);
             setImageLoading(false);
           }}
-          onLoad={() => setImageLoading(false)}
+          onLoad={() => {
+            console.log(`Successfully loaded image: ${imageUrl}`);
+            setImageLoading(false);
+          }}
         />
       </div>
       <CardHeader className="space-y-2">
